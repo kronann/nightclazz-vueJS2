@@ -1,28 +1,61 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id="app">
+        <Menu  />
+        <Home/>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+const beers = [
+    {
+        "label": "Queue de Charrue",
+        "description": "La Queue de Charrue est une famille de bières brassées pour la Brasserie Vanuxeem. La plus connue et typique est la Queue de Charrue brune. Son nom ...",
+        "image": "/static/images/queuedecharrue.jpg",
+        "price": 3.70,
+        "stock": 2
+    },
+    {
+        "label": "La Corbeau",
+        "description": "La bière du Corbeau est une bière blonde trés gazeuse et avec une belle mousse persistante.Le nez propose des arômes de citron, de végétal et de caramel.la ...",
+        "image": "/static/images/corbeau.jpg",
+        "price": 3.10,
+        "stock": 2
+    },
+    {
+        "label": "Jack Hammer",
+        "description": "Selon la rumeur, la Jack Hammer serait une bière tellement houblonnée que l'on y retrouverait plus d'amertume que le palais humain ne puisse détecter.",
+        "image": "/static/images/jeackhammer.jpg",
+        "price": 3.50,
+        "stock": 2
+    },
+    {
+        "label": "Rince Cochon",
+        "description": "Autrefois brassée à Annoeullin par la SBA sous le nom de \"Le Rince Cochon\", cette bière est aujourd'hui brassée par la brasserie Haacht, en Belgique, qui ...",
+        "image": "/static/images/rincecochon.jpg",
+        "price": 3.50,
+        "stock": 2
+    }
+];
+
+    import Home from './components/Home.vue'
+    import Menu from './components/Menu.vue'
+
+    export default {
+        name: 'app',
+        components: {
+            Home, Menu
+        }
+    }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+    #app {
+        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: #2c3e50;
+        margin-top: 60px;
+    }
 </style>

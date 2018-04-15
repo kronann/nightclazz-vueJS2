@@ -1,0 +1,171 @@
+<template>
+    <div>
+       <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    <div class="row">
+
+                        <div class="col-sm-4 col-lg-4 col-md-4">
+                            <div class="thumbnail">
+                                <img src="/images/queuedecharrue.jpg" alt=""/>
+                                <div class="caption">
+                                    <h4 class="pull-right">3,70 €</h4>
+                                    <h4>
+                                        <a href="#">Queue de Charrue</a>
+                                    </h4>
+                                    <p>
+                                        La Queue de Charrue est une famille de bières brassées pour la Brasserie Vanuxeem. La plus connue et typique
+                                        est la Queue de Charrue brune. Son nom ...</p>
+                                </div>
+                                <div class="ratings">
+                                    <p>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                    </p>
+                                    <button type="button" class="pull-right btn btn-primary"
+                                            aria-label="Ajoutez au Panier">Ajouter
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 col-lg-4 col-md-4">
+                            <div class="thumbnail">
+                                <img src="/images/corbeau.jpg" alt=""/>
+                                <div class="caption">
+                                    <h4 class="pull-right">3,10 €</h4>
+                                    <h4>
+                                        <a href="#">La Corbeau</a>
+                                    </h4>
+                                    <p>
+                                        La bière du Corbeau est une bière blonde trés gazeuse et avec une belle mousse persistante.Le nez propose
+                                        des arômes de citron, de végétal et de caramel.la ...</p>
+                                </div>
+                                <div class="ratings">
+                                    <p>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                    </p>
+                                    <button type="button" class="pull-right btn btn-primary"
+                                            aria-label="Ajoutez au Panier">Ajouter
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 col-lg-4 col-md-4">
+                            <div class="thumbnail">
+                                <img src="/images/jeackhammer.jpg" alt=""/>
+                                <div class="caption">
+                                    <h4 class="pull-right">3,5 €</h4>
+                                    <h4>
+                                        <a href="#">Jack Hammer</a>
+                                    </h4>
+                                    <p>
+                                        Selon la rumeur, la Jack Hammer serait une bière tellement houblonnée que l'on y retrouverait plus d'amertume
+                                        que le palais humain ne puisse détecter.</p>
+                                </div>
+                                <div class="ratings">
+                                    <p>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                    </p>
+                                    <button type="button" class="pull-right btn btn-primary"
+                                            aria-label="Ajoutez au Panier">Ajouter
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 col-lg-4 col-md-4">
+                            <div class="thumbnail">
+                                <img src="/images/rincecochon.jpg" alt=""/>
+                                <div class="caption">
+                                    <h4 class="pull-right">3,50 €</h4>
+                                    <h4>
+                                        <a href="#">Rince Cochon</a>
+                                    </h4>
+                                    <p>
+                                        Autrefois brassée à Annoeullin par la SBA sous le nom de "Le Rince Cochon", cette bière est aujourd'hui
+                                        brassée par la brasserie Haacht, en Belgique, qui ...</p>
+                                </div>
+                                <div class="ratings">
+                                    <p>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                    </p>
+                                    <button type="button" class="pull-right btn btn-primary"
+                                            aria-label="Ajoutez au Panier">Ajouter
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="container">
+
+            <hr/>
+
+            <footer>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p>Zenika ECommerce</p>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+
+    </div>
+</template>
+
+<script>
+    export default {
+        name: 'Home',
+        props: {
+            msg: String
+        }
+    }
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+    h3 {
+        margin: 40px 0 0;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    li {
+        display: inline-block;
+        margin: 0 10px;
+    }
+
+    a {
+        color: #42b983;
+    }
+</style>
