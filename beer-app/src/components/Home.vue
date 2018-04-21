@@ -3,22 +3,13 @@
         <Menu :basket="basket"></Menu>
 
         <div class="container">
-
             <div class="row">
-
                 <div class="col-md-12">
-
                     <div class="row">
-                        <Beer :data="beers[0]" @update-basket="onAddToBasket"></Beer>
-                        <Beer :data="beers[1]" @update-basket="onAddToBasket"></Beer>
-                        <Beer :data="beers[2]" @update-basket="onAddToBasket"></Beer>
-                        <Beer :data="beers[3]" @update-basket="onAddToBasket"></Beer>
-                     </div>
-
+                        <Beer v-for="beer in beers" :data="beer" @update-basket="onAddToBasket" v-if="beer.stock > 0"></Beer>
+                    </div>
                 </div>
-
             </div>
-
         </div>
 
         <div class="container">
@@ -47,8 +38,14 @@
             };
         },
         methods: {
-            onAddToBasket(event) {
-                this.basket.push(event)
+            onAddToBasket(beer) {
+                this.basket.push(beer)
+                this.updateStock(beer);
+            },
+            updateStock(beer) {
+                if(beer.stock > 0){
+                    beer.stock--;
+                }
             }
         }
     }

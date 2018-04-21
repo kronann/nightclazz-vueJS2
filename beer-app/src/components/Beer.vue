@@ -1,6 +1,6 @@
 <template>
     <div class="col-sm-4 col-lg-4 col-md-4">
-        <div class="thumbnail">
+        <div class="thumbnail" v-bind:class="{ last: data.stock === 1 }">
             <img :src="img" alt=""/>
 
             <div class="caption">
@@ -35,7 +35,6 @@
         methods:{
             addToBasket() {
                 this.$emit('update-basket', this.data)
-
             }
         },
         computed: {
@@ -46,6 +45,8 @@
     }
 </script>>
 
-<style>
-
+<style lang="css">
+    .last {
+        background-color: rgba(255, 0, 0, 0.4)
+    }
 </style>
