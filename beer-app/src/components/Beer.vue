@@ -6,7 +6,7 @@
             <div class="caption">
                 <h4 class="pull-right">{{data.price}}€</h4>
                 <h4>
-                    <a href="#">{{data.title}}</a>
+                    <a href="#">{{data.label | uppercase }}</a>
                 </h4>
                 <p>
                     {{data.description}}</p>
@@ -31,11 +31,11 @@
 <script>
     export default {
         name: 'beer',
-        props:['data'],
-        methods:{
+        props: ['data'],
+        methods: {
             addToBasket() {
                 this.$emit('update-basket', this.data)
-            }
+            },
         },
         computed: {
             img() {

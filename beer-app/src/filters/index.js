@@ -1,0 +1,2 @@
+import './uppercase'
+import './currency'

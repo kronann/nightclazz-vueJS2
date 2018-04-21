@@ -11,20 +11,20 @@ export const BEERS = [
         "description": "La bière du Corbeau est une bière blonde trés gazeuse et avec une belle mousse persistante.Le nez propose des arômes de citron, de végétal et de caramel.la ...",
         "image": "corbeau.jpg",
         "price": 3.10,
-        "stock": 2
+        "stock": 3
     },
     {
         "label": "Jack Hammer",
         "description": "Selon la rumeur, la Jack Hammer serait une bière tellement houblonnée que l'on y retrouverait plus d'amertume que le palais humain ne puisse détecter.",
         "image": "jeackhammer.jpg",
         "price": 3.50,
-        "stock": 2
+        "stock": 5
     },
     {
         "label": "Rince Cochon",
         "description": "Autrefois brassée à Annoeullin par la SBA sous le nom de \"Le Rince Cochon\", cette bière est aujourd'hui brassée par la brasserie Haacht, en Belgique, qui ...",
         "image": "rincecochon.jpg",
         "price": 3.50,
-        "stock": 2
+        "stock": 1
     }
 ];

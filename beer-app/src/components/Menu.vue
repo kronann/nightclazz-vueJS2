@@ -8,7 +8,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="/basket.html">Accéder à votre panier ({{this.basket.length}} articles - {{getTotal()}}€)</a>
+                        <a href="/basket.html">Accéder à votre panier ({{this.basket.length}} articles - {{getTotal() | currency}})</a>
                     </li>
                 </ul>
             </div>
