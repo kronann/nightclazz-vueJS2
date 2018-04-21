@@ -29,8 +29,8 @@
 </template>
 
 <script>
-     export default {
-        name: 'Beer',
+    export default {
+        name: 'beer',
         props:['data'],
         methods:{
             addToBasket() {
@@ -38,13 +38,13 @@
 
             }
         },
-         computed: {
-             img() {
-                 return require('../assets/' + this.data.image)
-             }
-         }
+        computed: {
+            img() {
+                return require('../assets/' + this.data.image)
+            }
+        }
     }
-</script>
+</script>>
 
 <style>
 

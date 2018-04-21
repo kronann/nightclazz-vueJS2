@@ -1,4 +1,5 @@
 <template>
+
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -7,7 +8,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="/basket.html">Accéder à votre panier ({{this.produits.length}} articles - {{getTotal()}}€)</a>
+                        <a href="/basket.html">Accéder à votre panier ({{this.basket.length}} articles - {{getTotal()}}€)</a>
                     </li>
                 </ul>
             </div>
@@ -18,16 +19,12 @@
 
 <script>
     export default {
-        name: 'Menu',
-         props: ['produit'],
-        data() {
-            return {
-                produits: []
-            }
-        },
+        name: 'my-menu',
+        props: ['basket'],
+
         methods: {
             getTotal() {
-                return this.produits.reduce((next, current) => next + current.price, 0);
+                return this.basket.reduce((next, current) => next + current.price, 0).toFixed(2);
             }
         }
     }
