@@ -3,10 +3,11 @@ const bodyParser = require("body-parser");
 
 const cors = require('./cors');
 const conf = require('./server.json');
-const beers = require(conf.beers);
+
+let beers = require(conf.beers);
+let basket = [];
 
 const app = express();
-const basket = [];
 const context = '/api/v1';
 const router = express.Router();
 
@@ -33,12 +34,12 @@ router.post('/basket', (req, res) => {
     return beer;
   });
 
-  res.send(201, req.body);
+  res.status(201).send(req.body);
 });
 
 router.post('/basket/confirm', (req, res) => {
   basket = [];
-  res.send(200);
+  res.status(200);
 });
 
 app.use(context, router);
