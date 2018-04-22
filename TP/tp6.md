@@ -2,7 +2,7 @@
 
 Nous allons à présent intégrer dans notre application le routeur proposé par la communauté **VueJS**
 
-* Installez le module `vue-router` (npm i vue-router)
+* Installez le module `vue-router` (npm i vue-router --save)
 
 * Créez deux composants : `home` et `basket`
   * le composant `home` aura la charge d'afficher le contenu de la page que nous avons implémenté dans les PWs précédents

@@ -3,12 +3,12 @@
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/home.html">Zenika Ecommerce</a>
+                <router-link to="/" class="navbar-brand">Zenika Ecommerce</router-link>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="/basket.html">Accéder à votre panier ({{this.basket.length}} articles - {{getTotal() | currency}})</a>
+                        <router-link v-if="basket.length > 0"  to="/basket">Accéder à votre panier ({{this.basket.length}} articles - {{getTotal() | currency}})</router-link>
                     </li>
                 </ul>
             </div>
@@ -21,7 +21,9 @@
     export default {
         name: 'my-menu',
         props: ['basket'],
-
+created(){
+  console.log("dsdssdsq")
+},
         methods: {
             getTotal() {
                 return this.basket.reduce((next, current) => next + current.price, 0).toFixed(2);
