@@ -26,41 +26,45 @@
     import Beer from './Beer'
     import Menu from './Menu'
     import Footer from './Footer'
-
-    import {BEERS} from "../models/beers";
+    import BeerService from '../services/beer-service'
 
     export default {
         name: 'home',
         components: {Beer, Menu, Footer},
         data() {
             return {
-                beers: BEERS,
+                beers: [],
                 basket: []
             };
         },
+        mounted() {
+            BeerService.getBeers().then(beers => this.beers = beers.data);
+            BeerService.getBasket().then(basket => this.basket = basket.data);
+        },
         methods: {
             onAddToBasket(beer) {
-                this.basket.push(beer)
-                this.updateStock(beer);
-            },
-            updateStock(beer) {
-                if (beer.stock > 0) {
-                    beer.stock--;
-                }
+                BeerService.addBeerToBasket(beer).then(response => {
+                    console.log('dssqd ',response.status);
+                    if (response.status === 201) {
+                        BeerService.getBasket().then(basket => this.basket = basket.data);
+                        BeerService.getBeers().then(beers => this.beers = beers.data);
+                    }
+                });
+
             }
         },
         computed: {
-            sortedBeers: function()
-            {
+            sortedBeers: function () {
                 return this.beers.sort((beer, beer2) => {
-                let result = 0;
-                if (beer.price < beer2.price) {
-                    result = 1;
-                } else if (beer.price > beer2.price) {
-                    result = -1;
-                }
-                return result;
-            })}
+                    let result = 0;
+                    if (beer.price < beer2.price) {
+                        result = 1;
+                    } else if (beer.price > beer2.price) {
+                        result = -1;
+                    }
+                    return result;
+                })
+            }
         }
     }
 </script>

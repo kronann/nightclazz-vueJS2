@@ -23,7 +23,20 @@ Cette API propose plusieurs points d'entrée :
 - `GET` sur `/basket`  retournera le panier de l'utilisateur
 - `POST` sur `/basket` pour ajouter une nouvelle bière au panier de l'utilisateur
 
-Pour consommer cette API nous allons utiliser `fetch` dans l'étape `created` du cycle de vie de notre composant VueJS.
+Pour consommer cette API nous allons utiliser `axios` dans l'étape `created` du cycle de vie de notre composant VueJS.
+```
+npm install axios --save
+
+```
+
+* N'oubliez pas d'ajouter vue-resource dans votre application vuejs (fichier main.js)
+```
+npm install axios --save
+
+
+import axios from 'axios';
+
+```
 
 Dans le composant principal :
 
