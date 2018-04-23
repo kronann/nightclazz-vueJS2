@@ -28,39 +28,25 @@
     import Beer from './Beer'
     import Menu from './Menu'
     import Footer from './Footer'
-    import BeerService from '../services/beer-service'
     import {mapState, mapActions} from 'vuex';
     import store from './../store';
 
     export default {
         name: 'home',
         components: {Beer, Menu, Footer},
-        data() {
-            return {
-                beers: []
-            };
-        },
         mounted() {
-            BeerService.getBeers().then(beers => this.beers = beers.data);
-            // console.log(this.getBasket);
-          console.log(store);
-          store.dispatch('getBasket');
+          store.dispatch('run');
         },
         methods: {
             onAddToBasket(beer) {
-                BeerService.addBeerToBasket(beer).then(response => {
-                    console.log('dssqd ',response.status);
-                    if (response.status === 201) {
-                        BeerService.getBasket().then(basket => this.basket = basket.data);
-                        BeerService.getBeers().then(beers => this.beers = beers.data);
-                    }
-                });
+                store.dispatch('basketStore/addToBasket', beer);
 
             }
         },
         computed: {
-          ...mapState(['basket']),
-          ...mapActions(['getBasket']),
+          ...mapState('basketStore', ['basket']),
+          ...mapState('marketStore', ['beers']),
+          ...mapActions('basketStore', ['getBasket']),
             sortedBeers: function () {
                 return this.beers.sort((beer, beer2) => {
                     let result = 0;

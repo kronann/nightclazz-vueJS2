@@ -1,24 +1,19 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import BeerService from '../services/beer-service'
+import basketStore from '@/store/basket';
+import marketStore from '@/store/market';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {
-    basket: []
-  },
-  mutations: {
-    setBasket(state, basket){
-      state.basket = basket;
-    }
+  modules: {
+    basketStore,
+    marketStore
   },
   actions: {
-    addToBasket(commit, basket){
-      commit('addToBasket', basket)
-    },
-    getBasket({commit}){
-      BeerService.getBasket().then(basket => commit('setBasket', basket.data));
+    run({dispatch}) {
+      dispatch('basketStore/getBasket');
+      dispatch('marketStore/loadBeers');
     }
   }
 })

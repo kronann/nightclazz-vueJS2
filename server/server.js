@@ -25,16 +25,12 @@ router.get('/basket', (req, res) => {
 
 router.post('/basket', (req, res) => {
   basket.push(req.body);
+  let index = beers.findIndex((b) => b.label === req.body.label);
+  let beer = req.body;
+  beer.stock--;
+  beers[index] = beer;
 
-  beers = beers.map(beer => {
-    if (beer.label.toUpperCase() === req.body.label.toUpperCase()) {
-      beer.stock--;
-    }
-
-    return beer;
-  });
-
-  res.status(201).send(req.body);
+  res.status(201).send(beer);
 });
 
 router.post('/basket/confirm', (req, res) => {
