@@ -6,7 +6,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="row">
-                        <Beer v-for="beer in sortedBeers" :data="beer" @update-basket="onAddToBasket"
+                        <Beer v-for="beer in sortedBeers"
+                              :data="beer"
+                              @update-basket="onAddToBasket"
                               v-if="beer.stock > 0"></Beer>
                     </div>
                 </div>

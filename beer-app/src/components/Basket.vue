@@ -20,19 +20,21 @@
 
                     <div class="form-group" v-bind:class="{ 'has-error': errors.has('name') }">
                         <label class="control-label" for="name">Name</label>
-                        <input type="text" v-validate="'required'" :model="customer.name" id="name" class="form-control" name="name">
+                        <input type="text" v-validate="'required'" :model="customer.name" id="name" class="form-control"
+                               name="name">
                     </div>
 
 
                     <div class="form-group" v-bind:class="{ 'has-error': errors.has('address') }">
                         <label class="control-label" for="address">Address</label>
                         <textarea id="address" class="form-control" name="address" v-model.lazy="customer.address"
-                                  required></textarea>
+                                  v-validate="'required'"></textarea>
                     </div>
 
                     <div class="form-group" v-bind:class="{ 'has-error': errors.has('creditCard') }">
                         <label class="control-label" for="creditCard">Credit card number</label>
-                        <input id="creditCard" class="form-control" name="creditCard" pattern=""
+                        <input id="creditCard" class="form-control" name="creditCard"
+                               v-validate="'credit_card'"
                                v-model="customer.creditCard">
                     </div>
 
@@ -54,40 +56,41 @@
 </template>
 
 <script>
-    import BeerService from '../services/beer-service';
-    import Menu from './Menu'
-    import Footer from './Footer';
+  import BeerService from '../services/beer-service';
+  import Menu from './Menu'
+  import Footer from './Footer';
 
-    export default {
-        name: 'basket',
-        components: {Menu, Footer},
-        data() {
-            return {
-                basket: [],
-                customer: {
-                    name: '',
-                    address: '',
-                    creditCard: 0
-                }
-            }
-        },
-        methods: {
-            checkForm (e) {
-                if (this.customer.name && this.customer.address) return true;
-                this.errors = [];
-                if (!this.customer.name) this.errors.push("Name required.");
-                if (!this.customer.address) this.errors.push("Address required.");
-                e.preventDefault();
-            },
-            validCreditCard() {
-                const pattern  = '^[0-9]{3}-[0-9]{3}$';
-                return this.customer.name && pattern.test(this.customer.name);
-            }
-        },
-        created() {
-            BeerService.getBasket().then(basket => this.basket = basket.data);
+  export default {
+    name: 'basket',
+    components: {Menu, Footer},
+    data() {
+      return {
+        basket: [],
+        customer: {
+          name: '',
+          address: '',
+          creditCard: 0
         }
+      }
+    },
+    methods: {
+      checkForm(e) {
+        // this.$validator.validateAll().then((result) => {
+        //   if (result) {
+        //     return;
+        //   }
+        // });
+        e.preventDefault();
+      },
+      validCreditCard() {
+        const pattern = '^[0-9]{3}-[0-9]{3}$';
+        return this.customer.name && pattern.test(this.customer.name);
+      }
+    },
+    created() {
+      BeerService.getBasket().then(basket => this.basket = basket.data);
     }
+  }
 </script>
 
 <style>

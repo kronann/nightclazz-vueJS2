@@ -1,7 +1,7 @@
 <template>
     <div class="col-sm-4 col-lg-4 col-md-4">
         <div class="thumbnail" v-bind:class="{ last: data.stock === 1 }">
-            <img :src="data.image" alt=""/>
+            <img :src="img" alt=""/>
 
             <div class="caption">
                 <h4 class="pull-right">{{data.price}}€</h4>
@@ -38,7 +38,9 @@
             },
         },
         computed: {
-
+          img() {
+            return require('../assets/' + this.data.image)
+          }
         }
     }
 </script>>
