@@ -29,19 +29,22 @@
     import Menu from './Menu'
     import Footer from './Footer'
     import BeerService from '../services/beer-service'
+    import {mapState, mapActions} from 'vuex';
+    import store from './../store';
 
     export default {
         name: 'home',
         components: {Beer, Menu, Footer},
         data() {
             return {
-                beers: [],
-                basket: []
+                beers: []
             };
         },
         mounted() {
             BeerService.getBeers().then(beers => this.beers = beers.data);
-            BeerService.getBasket().then(basket => this.basket = basket.data);
+            // console.log(this.getBasket);
+          console.log(store);
+          store.dispatch('getBasket');
         },
         methods: {
             onAddToBasket(beer) {
@@ -56,6 +59,8 @@
             }
         },
         computed: {
+          ...mapState(['basket']),
+          ...mapActions(['getBasket']),
             sortedBeers: function () {
                 return this.beers.sort((beer, beer2) => {
                     let result = 0;

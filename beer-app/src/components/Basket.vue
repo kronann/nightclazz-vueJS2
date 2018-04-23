@@ -56,16 +56,18 @@
 </template>
 
 <script>
-  import BeerService from '../services/beer-service';
+  import {mapState} from 'vuex';
   import Menu from './Menu'
   import Footer from './Footer';
 
   export default {
     name: 'basket',
     components: {Menu, Footer},
+    computed: {
+      ...mapState(['basket'])
+    },
     data() {
       return {
-        basket: [],
         customer: {
           name: '',
           address: '',
@@ -88,7 +90,6 @@
       }
     },
     created() {
-      BeerService.getBasket().then(basket => this.basket = basket.data);
     }
   }
 </script>
