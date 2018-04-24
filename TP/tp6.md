@@ -4,7 +4,7 @@ Nous allons à présent intégrer dans notre application le routeur proposé par
 
 * Installez le module `vue-router` (npm i vue-router --save)
 
-* Créez deux composants : `home` et `basket`
+* Créez/updatez deux composants : `home` et `basket`
   * le composant `home` aura la charge d'afficher le contenu de la page que nous avons implémenté dans les PWs précédents
   * le composant `basket` qui doit afficher, pour l'instant, le contenu du panier de l'utilisateur
 
