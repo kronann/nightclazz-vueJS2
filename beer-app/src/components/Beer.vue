@@ -35,7 +35,6 @@
         methods:{
             addToBasket() {
                 this.$emit('update-basket', this.data)
-
             }
         },
         computed: {

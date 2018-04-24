@@ -13,7 +13,7 @@
                         <Beer :data="beers[1]" @update-basket="onAddToBasket"></Beer>
                         <Beer :data="beers[2]" @update-basket="onAddToBasket"></Beer>
                         <Beer :data="beers[3]" @update-basket="onAddToBasket"></Beer>
-                     </div>
+                    </div>
 
                 </div>
 
@@ -24,7 +24,7 @@
         <div class="container">
             <hr>
             <Footer></Footer>
-         </div>
+        </div>
 
     </div>
 </template>
@@ -47,8 +47,8 @@
             };
         },
         methods: {
-            onAddToBasket(event) {
-                this.basket.push(event)
+            onAddToBasket(beer) {
+                this.basket.push(beer)
             }
         }
     }
