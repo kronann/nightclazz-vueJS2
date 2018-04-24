@@ -1,4 +1,4 @@
-## PW4 - Les fonctions pures
+## PW4 - Les fonctions pures utilisées pour les filtres.
 
 Nous allons à présent créer des fonctions afin de formater le contenu de notre application.
 
