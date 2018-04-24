@@ -1,8 +1,11 @@
 ## PW2 - Les Composants
 
-* Vous êtes à présent prêt pour intégrer le template dans l'application qui vient d'être générée. Nous allons nous limiter pour l'instant à la page `home.html`. Voici les prérequis :
-    * les éléments à l'extérieur de `<body>` doivent se trouver dans le fichier `index.html`
-    * le contenu de `<body>` doit être inséré dans le composant `App.js`
+* Vous êtes à présent prêt pour intégrer le template dans l'application qui vient d'être générée. Nous allons nous limiter pour l'instant à la page `home.html`.
+ 
+Voici les prérequis :
+ 
+* les éléments à l'extérieur de `<body>` doivent se trouver dans le fichier `index.html`
+* créer un composant `Home.vue` ou renommez Helloworld.vue puis insérez le contenu précedement dans body dans la partie template. 
 
 Nous allons à présent créer nos premiers composants. Le premier sera utilisé pour afficher le **header** et le second pour le bloc spécifique à une bière.
 
