@@ -1,4 +1,4 @@
-c## PW8 - Redux
+## PW8 - Vuex
 
 Pour terminer ce codelab, nous allons intégrer la bibliothèque **Vuex** (l'équivalent de Redux de React) afin de gérer les états de l'application.
 
